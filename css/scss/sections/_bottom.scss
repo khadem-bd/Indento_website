@@ -1,0 +1,57 @@
+.bottom {
+    position: relative;
+    padding: 50px 0px;
+
+    &::before {
+        content: "";
+        @include dimension(100%, 5px);
+        @include position(absolute, 0px, null, null, 0px, 20);
+        background: linear-gradient(to right, rgba(253, 141, 95, 1) 21%, rgba(106, 73, 243, 1) 57%, rgba(211, 104, 67, 1) 100%);
+    }
+
+    h4{
+        @include text(20px, 800, 0px 0px 20px 0px, $dark, capitalize);
+    }
+    p{
+        @include text(16px, 400, 0px 0px 10px 0px, $dark, null);
+        span{
+            font-weight: 600;
+        }
+        svg{
+            @include square(16px);
+            color: $orange;
+            margin-right: 10px;
+        }
+    }
+
+    .form-group{
+        label{
+            @include text(20px, 600, null, $dark, null);
+        }
+        .form-control{
+            @include formInput(null, 50px, 1px solid #C3C3C3, 5px, $white, $dark, 16px, false);
+        }
+        .btn{
+            padding: 12px 30px;
+            @include customBorderRadius(0px, null, null, 0px);
+            @include position(absolute, 0px, 0px, null, null, 100);
+        }
+    }
+
+    .social-icons{
+        li{
+            display: inline-block;
+            a{
+                display: inline-block;
+                margin: 0px 10px;
+                img{
+                    width: 40px;
+                }
+
+                &:first-child{
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+}

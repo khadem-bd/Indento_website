@@ -1,0 +1,43 @@
+.testimonail {
+    padding-bottom: 50px;
+    .top-banner {
+        width: 100%;
+    }
+
+    .section-title {
+        margin-top: -80px;
+    }
+
+    .testimonial-slider {
+        li {
+            text-align: center;
+
+            .client-pic {
+                @include square(75px);
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 18px;
+            }
+
+            p {
+                @include text(18px, 600, 0px 0px 10px 0px, $dark, capitalize);
+            }
+
+            .star-rating {
+                img {
+                    display: inline-block;
+                    margin: 0px 2px;
+                    vertical-align: top;
+                }
+            }
+
+            .feedback {
+                background-repeat: no-repeat, no-repeat;
+                @include text(40px, 300, 20px 0px 0px 0px, $dark, null);
+                width: 70%;
+                display: inline-block;
+                font-style: italic;
+            }
+        }
+    }
+}

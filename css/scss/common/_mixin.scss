@@ -1,0 +1,255 @@
+@mixin text($size, $weight, $margin, $color, $textTransform) {
+    @if $size !="null" {
+        font-size: $size;
+    }
+
+    @if $weight !="null" {
+        font-weight: $weight;
+    }
+
+    @if $margin !="null" {
+        margin: $margin;
+    }
+
+    @if $color !="null" {
+        color: $color;
+    }
+
+    @if $textTransform !="null" {
+        text-transform: $textTransform;
+    }
+}
+
+@mixin shape($displayType, $width, $height, $border-radius, $stoke, $margin, $padding, $transition, $visibility, $opacity) {
+
+    @if $displayType !="null" {
+        display: $displayType;
+    }
+
+    @if $width !="null" {
+        width: $width;
+    }
+
+    @if $height !="null" {
+        height: $height;
+    }
+
+    @if $border-radius !="null" {
+        border-radius: $border-radius;
+    }
+
+    @if $stoke !="null" {
+        border: $stoke;
+    }
+
+    @if $margin !="null" {
+        margin: $margin;
+    }
+
+    @if $padding !="null" {
+        padding: $padding;
+    }
+
+    @if $transition !="null" {
+        transition: $transition;
+    }
+
+    @if $visibility !="null" {
+        visibility: $visibility;
+    }
+
+    @if $opacity !="null" {
+        opacity: $opacity;
+    }
+}
+
+@mixin square($size){
+    width: $size;
+    height: $size;
+}
+
+@mixin dimension($width, $height){
+    @if $width !="null" {
+        width: $width;
+    }
+
+    @if $height !="null" {
+        height: $height;
+    }
+}
+
+@mixin customBorder($top, $right, $bottom, $left){
+    @if $top !="null" {
+        border-top:$top;
+    }
+    @if $right !="null" {
+        border-right:$right;
+    }
+    @if $bottom !="null" {
+        border-bottom:$bottom;
+    }
+    @if $left !="null" {
+        border-left:$left;
+    }
+}
+
+@mixin background($bg-color, $bg-url, $bg-repeat, $bg-size, $bg-position) {
+    @if $bg-color !="null" {
+        background-color: $bg-color;
+    }
+
+    @if $bg-url !="null" {
+        background-image: $bg-url;
+    }
+
+    @if $bg-repeat !="null" {
+        background-repeat: $bg-repeat;
+    }
+
+    @if $bg-size !="null" {
+        background-size: $bg-size;
+    }
+
+    @if $bg-position !="null" {
+        background-position: $bg-position;
+    }
+}
+
+@mixin position($position, $top, $right, $bottom, $left, $zIndex) {
+    @if $position !="null" {
+        position: $position;
+    }
+
+    @if $top !="null" {
+        top: $top;
+    }
+
+    @if $right !="null" {
+        right: $right;
+    }
+
+    @if $bottom !="null" {
+        bottom: $bottom;
+    }
+
+    @if $left !="null" {
+        left: $left;
+    }
+
+    @if $zIndex !="null" {
+        z-index: $zIndex;
+    }
+}
+
+@mixin button($displayType, $bg-color, $textColor, $padding, $margin, $fontsize, $fontWeight, $border, $boxShadow) {
+    transition: all 0.5s ease;
+
+    @if $displayType !="null" {
+        display: $displayType;
+    }
+
+    @if $bg-color !="null" {
+        background-color: $bg-color;
+    }
+
+    @if $textColor !="null" {
+        color: $textColor;
+    }
+
+    @if $padding !="null" {
+        padding: $padding;
+    }
+
+    @if $margin !="null" {
+        margin: $margin;
+    }
+
+    @if $fontsize !="null" {
+        font-size: $fontsize;
+    }
+
+    @if $fontWeight !="null" {
+        font-weight: $fontWeight;
+    }
+
+    @if $border !="null" {
+        border: $border;
+    }
+
+    @if $boxShadow !="null" {
+        box-shadow: $boxShadow;
+    }
+}
+
+@mixin buttonHover($hoverBGcolor, $hoverTextColor, $hoverBorder, $hoverBoxShadow, $hoverTransform) {
+    @if $hoverBGcolor !="null" {
+        background-color: $hoverBGcolor;
+    }
+
+    @if $hoverTextColor !="null" {
+        color: $hoverTextColor;
+    }
+
+    @if $hoverBorder !="null" {
+        border: $hoverBorder;
+    }
+
+    @if $hoverBoxShadow !="null" {
+        box-shadow: $hoverBoxShadow;
+    }
+
+    @if $hoverTransform !="null" {
+        transform: $hoverTransform;
+    }
+}
+
+@mixin customBorderRadius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+    -webkit-border-top-left-radius: $topLeft;
+    -webkit-border-top-right-radius: $topRight;
+    -webkit-border-bottom-right-radius: $bottomRight;
+    -webkit-border-bottom-left-radius: $bottomLeft;
+
+    -moz-border-radius-topleft: $topLeft;
+    -moz-border-radius-topright: $topRight;
+    -moz-border-radius-bottomright: $bottomRight;
+    -moz-border-radius-bottomleft: $bottomLeft;
+
+    border-top-left-radius: $topLeft;
+    border-top-right-radius: $topRight;
+    border-bottom-right-radius: $bottomRight;
+    border-bottom-left-radius: $bottomLeft;
+}
+
+@mixin formInput($width, $height, $border, $border-radius, $background-color, $color, $font-size, $hasIcon){
+    @if $width !="null" {
+        width: $width;
+    }
+
+    @if $height !="null" {
+        height: $height;
+    }
+
+    @if $border !="null" {
+        border: $border;
+    }
+
+    @if $border-radius !="null" {
+        border-radius: $border-radius;
+    }
+
+    @if $background-color !="null" {
+        background-color: $background-color;
+    }
+
+    @if $color !="null" {
+        color: $color;
+    }
+
+    @if $font-size !="null" {
+        font-size: $font-size;
+    }
+
+    @if $hasIcon == true {
+        padding-right: 50px;
+    }
+}

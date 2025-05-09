@@ -1,0 +1,55 @@
+.features{
+    padding: 100px 0px;
+
+    .card{
+        @include shape(null, null, null, 20px, null, null, 30px, null, null, null);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
+        min-height: 300px;
+    }
+
+    .icon{
+        @include square(45px);
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 10px;
+        svg{
+            @include square(16px); 
+        }
+
+        &.color-1{
+            background-color: #FCEFE9;
+            svg{
+                color: $orange;
+            }
+        }
+
+        &.color-2{
+            background-color: #D5FBFC;
+            svg{
+                color: #699FA0;
+            }
+        }
+
+        &.color-3{
+            background-color: #E7FCD5;
+            svg{
+                color: #98C076;
+            }
+        }
+
+        &.color-4{
+            background-color: #FFE3E4;
+            svg{
+                color: #CB7275;
+            }
+        }
+    }
+
+    h3{
+        @include text(20px, 800, 20px 0px 16px 0px, $dark, capitalize);
+    }
+    p{
+        @include text(16px, 500, null, $dark, null);
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,28 @@
+header{
+    padding: 20px 0px;
+    .branding{
+        display: inline-block;
+    }
+    ul{
+        width: 50%;
+        float: left;
+        &.navigation{
+            text-align: center;
+            margin-top: 11px;
+            li{
+                display: inline-block;
+                margin: 0px 10px;
+                a{
+                    @include text(16px, 600, null, $dark, capitalize);
+                }
+            }
+        }
+        &.registration{
+            text-align: right;
+            li{
+                display: inline-block;
+                margin: 0px 10px;
+            }
+        }
+    }
+}

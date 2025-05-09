@@ -1,0 +1,50 @@
+.video-trailer {
+    .content-wrapper {
+        background-color: $lightblue;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        font-size: 0px;
+        &:after {
+            content: "";
+            @include position(absolute, null, null, 0px, 0px, 50);
+            @include dimension(100%, 100px);
+
+        }
+
+        .btn-wrapper {
+            @include shape(inline-block, null, null, null, null, null, 0px 18px 9px 18px, null, null, null);
+            @include customBorderRadius(null, null, 20px, 20px);
+            background-color: $white;
+            position: relative;
+
+            .left-curve {
+                @include square(25px);
+                @include position(absolute, 0px, null, null, -25px, null);
+            }
+
+            .right-curve {
+                @include square(25px);
+                @include position(absolute, 0px, -25px, null, null, null);
+            }
+
+            .btn {
+                padding: 10px 50px;
+                border-radius: 50px;
+
+                svg {
+                    margin-right: 5px;
+                }
+
+                span {
+                    display: inline-block;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+}

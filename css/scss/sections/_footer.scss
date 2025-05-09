@@ -1,0 +1,7 @@
+footer{
+    border-top: 1px solid #DADADA;
+    padding: 25px 0px;
+    p{
+        @include text(14px, 400, null, $dark, null);
+    }
+}

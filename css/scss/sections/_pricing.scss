@@ -1,0 +1,61 @@
+.pricing {
+    padding: 100px 0px;
+
+    .gray-bg {
+        background-color: $lightgray;
+        border-radius: 20px;
+        padding: 30px;
+        max-height: 500px;
+        margin-top: 50px;
+
+        img {
+            &.pricing-ui{
+                width: 100%;
+                margin-top: -100px;
+            }
+        }
+
+        .price-package {
+            padding: 15px;
+            border-radius: 20px;
+            border: 1px solid $orange;
+            background-color: $white;
+
+            h4 {
+                @include text(30px, 600, 0px 0px 10px 0px, $dark, null);
+            }
+
+            p {
+                @include text(16px, 600, null, $dark, null);
+            }
+        }
+
+
+        .package-features {
+            margin-top: 50px;
+
+            li {
+                @include text(20px, 400, 0px 0px 20px 0px, $dark, null);
+                position: relative;
+                padding-left: 30px;
+
+                &:before {
+                    content: "";
+                    @include position(absolute, 6px, null, null, 0px, null);
+                    @include square(17px);
+                    border-radius: 50%;
+                    background-color: $orange;
+                }
+
+                &:after {
+                    content: "";
+                    @include dimension(5px, 11px);
+                    @include customBorder(null, 2px solid $white, 2px solid $white, null);
+                    @include position(absolute, 8px, null, null, 6px, null);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+}

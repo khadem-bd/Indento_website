@@ -1,0 +1,46 @@
+$orange:#FD8959;
+$lightorange:#FAE9E2;
+$lightblue:#F3F0FF;
+$dark:#323030;
+$lightgray: #F8F5F5;
+
+body {
+    font-family: "Urbanist", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.container-fluid{
+    padding: 0px 100px;
+}
+
+.btn{
+    @include button(inline-block, null, null, 10px 30px, null, 16px, 600, null, 0px 2px 4px rgba(0,0,0,0.15));
+
+    &.btn-primary{
+        @include button(null, $orange, $white, null, null, null, null, 1px solid $orange, null);
+    }
+    &.btn-outline-primary{
+        @include button(null, $white, $orange, null, null, null, null, 1px solid $orange, null);
+    }
+}
+
+.section-title{
+    @include text(40px, 800, 0px 0px 50px 0px, $dark, capitalize);
+    text-align: center;
+}
