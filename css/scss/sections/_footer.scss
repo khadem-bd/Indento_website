@@ -1,7 +1,22 @@
-footer{
+footer {
     border-top: 1px solid #DADADA;
     padding: 25px 0px;
-    p{
-        @include text(14px, 400, null, $dark, null);
+
+    p {
+        @include text(16px, 600, null, $dark, null);
+
+        a {
+            color: $dark;
+            text-decoration: underline;
+            font-weight: 800;
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    footer {
+        p {
+            margin-bottom: 15px;
+        }
     }
 }

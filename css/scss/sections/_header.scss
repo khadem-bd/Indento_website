@@ -1,27 +1,145 @@
-header{
+header {
     padding: 20px 0px;
-    .branding{
+    width: 100%;
+    @include position(fixed, 0px, null, null, 0px, 500);
+    background-color: $white;
+    box-shadow: 0px 2px 10px rgba(0,0,0, 0.1);
+
+    .branding {
         display: inline-block;
     }
-    ul{
+
+    .closeMobleMenu,
+    .hamburgerMenu {
+        display: none;
+    }
+
+    ul {
         width: 50%;
         float: left;
-        &.navigation{
+
+        &.navigation {
             text-align: center;
             margin-top: 11px;
-            li{
+
+            li {
                 display: inline-block;
                 margin: 0px 10px;
-                a{
+
+                a {
                     @include text(16px, 600, null, $dark, capitalize);
                 }
             }
         }
-        &.registration{
+
+        &.registration {
             text-align: right;
-            li{
+
+            &.fullwidth{
+                width: 100%;
+            }
+
+            li {
                 display: inline-block;
                 margin: 0px 10px;
+                a {
+                    @include text(16px, 600, null, $dark, capitalize);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1240px) {
+    header {
+        .branding {
+            margin-top: 7px;
+
+            img {
+                width: 170px;
+            }
+        }
+
+        ul {
+            &.navigation {
+                li {
+                    margin: 0px 5px;
+
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+    header {
+        .hamburgerMenu {
+            display: inline-block !important;
+            @include position(absolute, 5px, 20px, null, null, null);
+
+            svg {
+                @include square(30px);
+                color: $dark;
+            }
+        }
+
+        .nav-wrapper {
+            @include square(100%);
+            @include position(fixed, 0px, null, null, 0px, 1000);
+            background-color: $white;
+            transition: all 0.5s ease;
+            opacity: 0;
+            visibility: hidden;
+
+            &.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .closeMobleMenu {
+                display: inline-block;
+                @include position(absolute, 20px, 20px, null, null, null);
+
+                svg {
+                    @include square(40px);
+                    color: $orange;
+                }
+            }
+
+            ul {
+                margin-top: 50px;
+                float: none;
+                width: unset;
+
+                &.navigation {
+                    li {
+                        margin: 10px 0px;
+                        display: block;
+
+                        a {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &.registration {
+                    li {
+                        margin: 10px 0px;
+                        display: block;
+                        text-align: center;
+
+                        a {
+                            &.btn {
+                                width: 200px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

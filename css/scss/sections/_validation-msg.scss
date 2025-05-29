@@ -1,0 +1,161 @@
+.form-group {
+    &.input-wrapper {
+        .rf-msg {
+            @include text(14px, 600, 5px 0px 0px 15px, $red, null);
+            display: none;
+        }
+
+        &.v-error {
+            .rf-msg {
+                display: block;
+            }
+
+            .form-control {
+                border: 1px solid $red;
+            }
+        }
+    }
+}
+
+.dialog-box-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(12, 10, 10, 0.9) 0%, rgba(20, 20, 20, 0.89) 100%);
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+
+    .dialog-box {
+        max-width: 400px;
+        background-color: $white;
+        margin: 0 auto;
+        position: relative;
+        top: 30%;
+        transform: translateY(-50%);
+        transition: all 0.5s ease;
+        border-radius: 15px;
+        opacity: 0;
+        visibility: hidden;
+
+        &.large{
+            max-width: 600px;
+        }
+
+        h2 {
+            font-family: "Urbanist", sans-serif;
+            @include text(23px, 600, 0, $dark, null);
+            padding: 20px;
+        }
+
+        p {
+            padding:0px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #767676;
+        }
+
+        .action-btns {
+            margin: 0;
+            border-top: 1px solid #ccc;
+            padding: 15px 20px;
+
+            .btn {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 600;
+                &.btn-outline{
+                    border:1px solid $orange;
+                    color:$orange;
+                    margin-right: 10px;
+                }
+                &.btn-primary{
+                    border:1px solid $orange;
+                    background-color: $orange;
+                    color:$white;
+                }
+            }
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+
+        .dialog-box {
+            opacity: 1;
+            visibility: visible;
+            top: 40%;
+        }
+    }
+}
+
+.toaster {
+    position: relative;
+
+    .icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+
+        img {
+            width: 20px;
+            position: relative;
+            top: 40%;
+            transform: translateY(-50%);
+        }
+    }
+
+    h2 {
+        font-family: "Urbanist", sans-serif;
+        @include text(16px, 700, 0px, $dark, null);
+    }
+
+    p {
+        @include text(14px, 500, 0, $dark, null);
+    }
+
+    &.success-msg {
+        @include toaster(#00CC99, #E6FBF6, #C2F5E9);
+    }
+
+    &.error-msg {
+        @include toaster(#EB5757, #FEEEEF, #FCD7D9);
+    }
+
+    &.warning-msg {
+        @include toaster(#F2C94D, #FEF8E8, #F8EBCA);
+    }
+
+    &.info-msg {
+        @include toaster(#5458F7, #EFEEFE, #D1CEF8);
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .dialog-box-wrapper {
+        .dialog-box {
+            .action-btns {
+                .btn {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .toaster {
+        width: 95% !important;
+    }
+}

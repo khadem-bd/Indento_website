@@ -4,7 +4,8 @@
     .card{
         @include shape(null, null, null, 20px, null, null, 30px, null, null, null);
         box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
-        min-height: 300px;
+        min-height: 90%;
+        margin-bottom: 30px;
     }
 
     .icon{

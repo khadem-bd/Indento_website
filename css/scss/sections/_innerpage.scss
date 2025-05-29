@@ -1,0 +1,38 @@
+.innerpage{
+    padding-bottom: 50px;
+    h2{
+        @include text(30px, 800, 0px 0px 50px 0px, $dark, null);
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+    }
+    h3{
+        @include text(20px, 600, 0px 0px 5px 0px, $dark, null);
+    }
+    p{
+        @include text(16px, 400, 0px 0px 20px 0px, $dark, null);
+
+        a{
+            color:$dark;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    }
+    ul{
+        padding-left: 20px;
+        margin-bottom: 30px;
+        li{
+            padding-left: 15px;
+            margin-bottom: 10px;
+            position: relative;
+            &:before{
+                content: "";
+                @include dimension(5px, 10px);
+                @include position(absolute, 7px, null, null, 0px, 10);
+                border-right: 2px solid $orange;
+                border-bottom: 2px solid $orange;
+                transform: rotate(45deg);
+            }
+            @include text(16px, 400, 0px, $dark, null);
+        }
+    }
+}

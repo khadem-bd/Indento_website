@@ -36,3 +36,24 @@
         }
     }
 }
+
+@media (min-width: 0px) and (max-width: 991px) {
+    .contactus{
+        p{
+            font-size: 16px;
+        }
+    }
+}
+@media (min-width: 0px) and (max-width: 991px) {
+    .contactus {
+        .form-container{
+            width: 100%;
+            padding: 0px 30px;
+        }
+        .form-group{
+            label{
+                font-size: 16px;
+            }
+        }
+    }
+}

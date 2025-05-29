@@ -9,48 +9,111 @@
         background: linear-gradient(to right, rgba(253, 141, 95, 1) 21%, rgba(106, 73, 243, 1) 57%, rgba(211, 104, 67, 1) 100%);
     }
 
-    h4{
+    h4 {
         @include text(20px, 800, 0px 0px 20px 0px, $dark, capitalize);
     }
-    p{
-        @include text(16px, 400, 0px 0px 10px 0px, $dark, null);
-        span{
+
+    p {
+        @include text(20px, 400, 0px 0px 10px 0px, $dark, null);
+        padding-left: 30px;
+        position: relative;
+
+        span {
             font-weight: 600;
         }
-        svg{
-            @include square(16px);
+
+        svg {
+            @include position(absolute, 4px, null, null, 0px, 100);
+            @include square(20px);
             color: $orange;
             margin-right: 10px;
         }
+
+        a {
+            display: inline-block;
+            color: $dark;
+            font-weight: 800;
+            text-decoration: underline;
+        }
     }
 
-    .form-group{
-        label{
+    .footer-page-links {
+        li {
+            margin-bottom: 10px;
+
+            a {
+                @include text(16px, 400, null, $dark, null);
+                display: inline-block;
+                color: $dark;
+                font-weight: 800;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .form-group {
+        label {
             @include text(20px, 600, null, $dark, null);
         }
-        .form-control{
+
+        .form-control {
             @include formInput(null, 50px, 1px solid #C3C3C3, 5px, $white, $dark, 16px, false);
         }
-        .btn{
+
+        .btn {
             padding: 12px 30px;
-            @include customBorderRadius(0px, null, null, 0px);
-            @include position(absolute, 0px, 0px, null, null, 100);
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
         }
     }
 
-    .social-icons{
-        li{
+    .social-icons {
+        li {
             display: inline-block;
-            a{
+
+            a {
                 display: inline-block;
                 margin: 0px 10px;
-                img{
+
+                &.disabled {
+                    pointer-events: none;
+                    cursor: not-allowed;
+                    opacity: 0.1;
+                }
+
+                img {
                     width: 40px;
                 }
 
-                &:first-child{
+                &:first-child {
                     margin-left: 0px;
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1520px) {
+    .bottom {
+        p {
+            font-size: 16px;
+
+            svg {
+                @include square(16px);
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+    .bottom {
+        .form-group {
+            .btn {
+                position: static;
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
             }
         }
     }

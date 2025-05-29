@@ -1,0 +1,80 @@
+.modal-wrapper {
+    @include square(100%);
+    @include position(fixed, 0, null, null, 0, 1000);
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+
+    .indento-modal {
+        width: 760px;
+        padding: 30px;
+        border-radius: 30px;
+        background-color: $white;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+
+        h2 {
+            @include text(30px, 800, 0px 0px 10px 0px, $dark, capitalize);
+        }
+
+        p {
+            @include text(20px, 500, 0px 0px 10px 0px, #a1a0a0, null);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                @include text(16px, 600, 0px 0px 10px 0px, $dark, null);
+            }
+
+            .form-control {
+                height: 50px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+
+        .indento-modal {
+            opacity: 1;
+            visibility: visible;
+            top: 50%;
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .modal-wrapper{
+        .indento-modal{
+            width: 95%;
+            h2{
+                font-size: 20px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 400px) {
+    .modal-wrapper{
+        .indento-modal{
+            .btn{
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -1,11 +1,18 @@
 .testimonail {
     padding-bottom: 50px;
-    .top-banner {
-        width: 100%;
-    }
 
     .section-title {
         margin-top: -80px;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        @include text(20px, 600, 0px 0px 50px 0px, #9c9c9c, null);
+        text-align: center;
+    }
+
+    .top-banner {
+        width: 100%;
     }
 
     .testimonial-slider {
@@ -20,7 +27,7 @@
             }
 
             p {
-                @include text(18px, 600, 0px 0px 10px 0px, $dark, capitalize);
+                @include text(30px, 800, 0px 0px 10px 0px, $dark, capitalize);
             }
 
             .star-rating {
@@ -37,6 +44,42 @@
                 width: 70%;
                 display: inline-block;
                 font-style: italic;
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+    .testimonail {
+        .section-title {
+            margin-top: -60px;
+            font-size: 25px;
+        }
+
+        .testimonial-slider {
+            li {
+                .feedback {
+                    width: 100%;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .testimonail {
+        .section-title {
+            margin-top: 0px;
+            font-size: 20px;
+        }
+
+        .testimonial-slider {
+            li {
+                .feedback {
+                    width: 100%;
+                    font-size: 20px;
+                }
             }
         }
     }
